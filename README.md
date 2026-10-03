@@ -1,6 +1,6 @@
 # Fashion-MNIST ANN Pipeline
 
-End-to-end Machine Learning pipeline for Fashion-MNIST using TensorFlow, Git and DVC.
+End-to-End Machine Learning pipeline for Fashion-MNIST using TensorFlow, Git and DVC.
 
 ## Project Goals
 
