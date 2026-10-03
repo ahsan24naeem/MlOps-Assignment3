@@ -8,9 +8,10 @@ with open("params.yaml") as f:
 
 
 def normalize(x):
-    """Scale uint8 pixel values from [0, 255] to [0, 1]."""
-    return x.astype("float32") / 255.0
-
+    # teammate: standardize using Fashion-MNIST mean/std
+    x = x.astype("float32") / 255.0
+    return (x - 0.2860) / 0.3530
+    
 raw = np.load("data/raw/fashion_mnist.npz")
 x_train, y_train = normalize(raw["x_train"]), raw["y_train"]
 x_test, y_test = normalize(raw["x_test"]), raw["y_test"]
