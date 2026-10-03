@@ -9,3 +9,4 @@ End-to-End Machine Learning pipeline for Fashion-MNIST using TensorFlow, Git and
 - Version datasets and models using DVC
 - Store DVC artifacts on Google Drive
 - Build a reproducible ML pipeline using DVC
+- Run the pipeline with: `dvc repro`
