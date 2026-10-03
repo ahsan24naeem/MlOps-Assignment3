@@ -8,9 +8,11 @@ with open("params.yaml") as f:
 
 
 def normalize(x):
-    # main: center pixels around zero
-    return x.astype("float32") / 255.0 - 0.5
-
+    # merged: scale to [0, 1], then standardize with dataset mean/std
+    # (standardizing also centers the data, so it covers main's centering)
+    x = x.astype("float32") / 255.0
+    return (x - 0.2860) / 0.3530
+    
 raw = np.load("data/raw/fashion_mnist.npz")
 x_train, y_train = normalize(raw["x_train"]), raw["y_train"]
 x_test, y_test = normalize(raw["x_test"]), raw["y_test"]
